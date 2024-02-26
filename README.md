@@ -1,2 +1,0 @@
-# vlasenkorm.github.io
-CV
