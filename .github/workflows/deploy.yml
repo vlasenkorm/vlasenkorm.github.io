@@ -26,7 +26,7 @@ jobs:
       id-token: write   # to verify the deployment originates from an appropriate source
     
     environment:
-      name: github-pages
+      name: main
       url: ${{ steps.deployment.outputs.page_url }}
     
     runs-on: ubuntu-latest
