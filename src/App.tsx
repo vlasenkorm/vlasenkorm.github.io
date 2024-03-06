@@ -12,14 +12,17 @@ const GlobalStyle = createGlobalStyle`
 const FlexCenter = styled.div`
   display: flex;
   justify-content: center;
-  background-color: grey;
-`;
+  background: #2a2a2a;
+`
 
 const App: React.FC = () => {
   return (
     <>
+      <GlobalStyle />
       <Menu />
-      <FlexCenter><CV /></FlexCenter>
+      <FlexCenter>
+        <CV />
+      </FlexCenter>
     </>
   );
 };

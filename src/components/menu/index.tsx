@@ -6,12 +6,9 @@ const Menu: React.FC = () => {
 
   return (
     <Wrapper>
-      <h3>
-        Roman Vlasenko<br/>
-        Front-end Engineer
-      </h3>
-      <h3>Menu</h3>
-      <h3>icon</h3>
+      <FirstBox><h3>Roman Vlasenko<br />Front-end Engineer</h3></FirstBox>
+      <Box><h3>Menu</h3></Box>
+      <Box><h3>vlasenkorm@gmail.com</h3></Box>
     </Wrapper>
   );
 };
@@ -19,8 +16,20 @@ const Menu: React.FC = () => {
 export default Menu;
 
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  border: solid black 2px;
+  border: solid white 2px;
   justify-content: space-between;
-`;
+  align-items: center;
+  color: white;
+  background: #2a2a2a;
+`
+
+export const Box = styled.div`
+ width: 200px;
+ text-align: center;
+`
+export const FirstBox = styled.div`
+ width: 200px;
+ text-align: left;
+`
