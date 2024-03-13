@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
@@ -22,6 +23,9 @@ module.exports = {
     }),
     isDevelopment && new webpack.HotModuleReplacementPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
+    new CopyWebpackPlugin({patterns: [
+      {from:'src/images',to:'images'},
+    ]}),
   ],
   resolve: {
     modules: [__dirname, "src", "node_modules"],
@@ -45,7 +49,9 @@ module.exports = {
       },
       {
         test: /\.png|svg|jpg|gif$/,
-        use: ["file-loader"],
+        use: [{
+          loader: 'file-loader',
+        },],
       },
     ],
   },

@@ -15,8 +15,10 @@
   "author": "Roman Vlasenko",
   "license": "ISC",
   "dependencies": {
+    "i18next": "^23.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.0",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
@@ -33,6 +35,7 @@
     "@types/react-dom": "^18.0.9",
     "babel-loader": "^9.1.0",
     "browserslist": "^4.21.4",
+    "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.7.2",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
