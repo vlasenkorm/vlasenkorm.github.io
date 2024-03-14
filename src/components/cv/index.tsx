@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import styled from "styled-components";
 
 const CV: React.FC = () => {
 
+  const { t } = useTranslation();
   const [X, setX] = useState(0);
   const [Y, setY] = useState(0);
   const move = (e: any) => {
@@ -17,79 +19,70 @@ const CV: React.FC = () => {
   return (
     <Conteiner onMouseMove={move} onMouseLeave={clear}>
       <Wrapper $rotate_x={Y * 0.001} $rotate_y={X * -0.001}>
-        Roman Vlasenko<br />
-        Front-end Engineer
-        <h3>Summary </h3>
         <p>
-          Front-end developer with 6 years of experience in software programming.
-          Strong knowledge of JavaScript and related Frameworks. Experience with remote geographically
-          distributed team. Has good soft skills, goal-oriented, perfect team-player.
+          {t('name')}<br />
+          {t('title')}
         </p>
 
-        <h3>Technical skills</h3>
+        <h3>{t('summary.title')}</h3>
+        <p>{t('summary.text')}</p>
+
+        <h3>{t('skills.title')}</h3>
         <StyledTable>
           <tbody>
             <tr>
-              <td>Programming languages</td>
-              <td>JavaScript</td>
+              <td>{t('skills.languages.title')}s</td>
+              <td>{t('skills.languages.list')}</td>
             </tr>
             <tr>
-              <td>Tools and frameworks</td>
-              <td>
-                React, TypeScript, MobX, Redux, React Hooks, Functional Components,  Styled Components, NextJS.
-                Vue3, Vuex, Vue Material.
-                Angular 13, RxJS.
-                Node.JS, Express.JS, RESTful API, Sequelize, Docker.
-              </td>
+              <td>{t('skills.frameworks.title')}</td>
+              <td>{t('skills.frameworks.list')}</td>
             </tr>
             <tr>
-              <td>Additional technologies</td>
-              <td>HTML, CSS, SCSS/SASS, Figma, Adaptive Web, Jest, Web3, GraphQL, SQL, Webpack, Babel, Storybook, Git.</td>
+              <td>{t('skills.technologies.title')}</td>
+              <td>{t('skills.technologies.list')}</td>
             </tr>
             <tr>
-              <td>Databases</td>
-              <td>MongoDB, PostgreSQL, MySQL</td>
-            </tr>
-            <tr>
-              <td>Operating systems </td>
-              <td>MacOS, Linux, Windows</td>
+              <td>{t('skills.databases.title')}</td>
+              <td>{t('skills.databases.list')}</td>
             </tr>
           </tbody>
         </StyledTable>
 
-        <h3>Work experience</h3>
+        <h3>{t('experience.title')}</h3>
         <p>
-          Fintech Automation Evolution<br />
-          Description: Building customer-facing consumer web and mobile applications.<br />
-          Build architecture of project. Troubleshooting, finding optimal solutions.<br />
-          Role: Front-end Developer<br />
-          Technologies: JavaScript, React, TypeScript, Redux, React Hooks, Functional Components,  Styled Components.<br />
-          Year: 2022 - present<br />
+          {t('experience.investing.role')}<br />
+          {t('experience.investing.title')}<br />
+          {t('experience.investing.description')}<br />
+          {t('experience.investing.technologies')}<br />
+          {t('experience.investing.year')}<br />
         </p>
         <p>
-          Pragma<br />
-          Description: Work on Cryptocurrency projects. Communication with the client. Building an application architecture, introducing new ideas. Work on team, communicate,  finde resolve problems. Suggestions for improving current solutions.<br />
-          Role: Front-end Developer<br />
-          Technologies: JavaScript, React, TypeScript, Styled Components, GraphQL, Web3<br />
-          Year: 2021 - 2022<br />
-        </p><p>
-          Acropolium<br />
-          Description: Create and change Front-end projects. Building an application architecture, introducing new ideas. Improvement of both yourself and new employees. Communication with the client.<br />
-          Role: Full-Stack Engineer<br />
-          Technologies: JavaScript, React, Vue, Angular, Node.JS.<br />
-          Year: 2019 – 2022<br />
+          {t('experience.pragma.role')}<br />
+          {t('experience.pragma.title')}<br />
+          {t('experience.pragma.description')}<br />
+          {t('experience.pragma.technologies')}<br />
+          {t('experience.pragma.year')}<br />
+        </p>
+        <p>
+          {t('experience.acropolium.role')}<br />
+          {t('experience.acropolium.title')}<br />
+          {t('experience.acropolium.description')}<br />
+          {t('experience.acropolium.technologies')}<br />
+          {t('experience.acropolium.year')}<br />
         </p>
 
-        <h3>Education</h3>
+        <h3>{t('education.title')}</h3>
         <p>
-          Chernihiv National University of Technology<br />
-          Master of Computer Engineering
+          {t('education.university')}<br />
+          {t('education.degree')}
         </p>
-        <h3>Languages</h3>
+        
+        <h3>{t('languages.title')}</h3>
         <p>
-          English - Upper-Intermediate<br />
-          Ukrainian - Native<br />
-          Russian - Native
+          {t('languages.en')}<br />
+          {t('languages.ua')}<br />
+          {t('languages.ru')}
         </p>
       </Wrapper>
     </Conteiner>

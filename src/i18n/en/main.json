@@ -1,0 +1,62 @@
+{
+  "name": "Roman Vlasenko",
+  "title": "Front-end Engineer",
+  "summary": { 
+    "title": "Summary",
+    "text": "Front-end developer with 6 years of experience in software programming. Strong knowledge of JavaScript and related Frameworks. Experience with remote geographically distributed team. Has good soft skills, goal-oriented, perfect team-player."
+  },
+  "skills": {
+    "title": "Technical skills",
+    "languages": {
+      "title":"Programming languages",
+      "list": "JavaScript"
+    },
+    "frameworks": {
+      "title":"Tools and frameworks",
+      "list": "React, TypeScript, MobX, Redux, React Hooks, Functional Components, Styled Components, NextJS Vue3, Vuex, Vue Material Angular 13, RxJS. Node.JS, Express.JS, RESTful API, Sequelize, Docker."
+    },
+    "technologies": {
+      "title":"Additional technologies",
+      "list": "HTML, CSS, SCSS/SASS, Figma, Adaptive Web, Jest, Web3, GraphQL, SQL, Webpack, Babel, Storybook, Git."
+    },
+    "databases": {
+      "title":"Databases",
+      "list": "MongoDB, PostgreSQL, MySQL"
+    } 
+  },
+  "experience" : {
+    "title":"Work experience",
+    "investing": {
+      "role": "Role: Full-Stack Engineer",
+      "title":"Company: G.I.S. INVESTING",
+      "description": "Description: Building customer-facing consumer web and mobile applications.Build architecture of project. Troubleshooting, finding optimal solutions.",
+      "technologies" : "Technologies: JavaScript, React, TypeScript, Redux, React Hooks, Functional Components, Styled Components.",
+      "year": "Year: 2022 - present"
+    },
+    "pragma": {
+      "role": "Role: Front-end Developer",
+      "title":"Company: Pragma",
+      "description": "Description: Work on Cryptocurrency projects. Communication with the client. Building an application architecture, introducing new ideas. Work on team, communicate,  finde resolve problems. Suggestions for improving current solutions.",
+      "technologies" : "Technologies: JavaScript, React, TypeScript, Styled Components, GraphQL, Web3",
+      "year": "Year: 2021 - 2022"
+    },
+    "acropolium": {
+      "role": "Role: Full-Stack Engineer",
+      "title":"Company: Acropolium",
+      "description": "Description: Training by the company for the position. Create and modify Front-end projects. API creation and database setup. Construction of the program architecture, implementation of new ideas. Improving both yourself and new employees. Communication with the client.",
+      "technologies" : "Technologies: JavaScript, React, Vue, Angular, Node.JS.",
+      "year": "Year: 2019 – 2021"
+    }
+  },
+  "education": { 
+    "title": "Education",
+    "university": "Chernihiv National University of Technology",
+    "degree": "Master of Computer Engineering"
+  },
+  "languages": {
+    "title":"Languages",
+    "en": "English - Upper-Intermediate",
+    "ua": "Ukrainian - Native",
+    "ru": "Russian - Native"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Роман Власенко",
+  "title": "Front-end розробник",
+  "summary": {
+    "title": "Резюме",
+    "text": "Front-end розробник з 6-річним досвідом програмування. Глибоке знання JavaScript і пов’язаних фреймворків. Досвід роботи з віддаленою територіально розподіленою командою. Володіє хорошими навичками спілкування, цілеспрямований, ідеальний командний гравець."
+  },
+  "skills": {
+    "title": "Технічні навички",
+    "languages": {
+      "title": "Мова програмування",
+      "list": "JavaScript"
+    },
+    "frameworks": {
+      "title":"Бібліотеки",
+      "list": "React, TypeScript, MobX, Redux, React Hooks, Functional Components, Styled Components, NextJS Vue3, Vuex, Vue Material Angular 13, RxJS. Node.JS, Express.JS, RESTful API, Sequelize, Docker."
+    },
+    "technologies": {
+      "title":"Додаткові технлогії",
+      "list": "HTML, CSS, SCSS/SASS, Figma, Adaptive Web, Jest, Web3, GraphQL, SQL, Webpack, Babel, Storybook, Git."
+    },
+    "databases": {
+      "title":"Бази данних",
+      "list": "MongoDB, PostgreSQL, MySQL"
+    }
+  },
+  "experience" : {
+    "title":"Work experience",
+    "investing": {
+      "role": "Посада: Full-Stack Engineer",
+      "title":"Компанія: G.I.S. INVESTING",
+      "description": "Відповідальність: Створення клієнтоорієнтованих веб та мобільних додатків. Розробка архітектури проекту. Усунення несправностей, пошук оптимальних рішень.",
+      "technologies" : "Технології: JavaScript, React, TypeScript, Redux, React Hooks, Functional Components, Styled Components.",
+      "year": "Роки: 2022 - зараз"
+    },
+    "pragma": {
+      "role": "Посада: Front-end Developer",
+      "title":"Компанія: Pragma",
+      "description": "Відповідальність: Робота над криптовалютними проектами. Спілкування з клієнтом. Побудова архітектури програми, впровадження нових ідей. Працювати в команді, спілкуватися, знаходити вирішення проблем. Пропозиції щодо вдосконалення поточних рішень.",
+      "technologies" : "Технології: JavaScript, React, TypeScript, Styled Components, GraphQL, Web3",
+      "year": "Роки: 2021 - 2022"
+    },
+    "acropolium": {
+      "role": "Посада: Full-Stack Engineer",
+      "title":"Компанія: Acropolium",
+      "description": "Відповідальність: Навчання компанією на позицію. Створюйте та змінюйте Front-end проекти. Створення API та налаштування бази данних. Побудова архітектури програми, впровадження нових ідей. Вдосконалення як себе, так і нових співробітників. Спілкування з клієнтом.",
+      "technologies" : "Технології: JavaScript, React, Vue, Angular, Node.JS.",
+      "year": "Роки: 2019 – 2021"
+    }
+  },
+  "education": { 
+    "title": "Освіта",
+    "university": "Національний університет «Чернігівська Політехніка»",
+    "degree": "Магістр - Компьютерної інженерії"
+  },
+  "languages": {
+    "title":"Мови",
+    "en": "Англійська - Upper-Intermediate",
+    "ua": "Українська - Рідна",
+    "ru": "Російська - Добре"
+  }
+}

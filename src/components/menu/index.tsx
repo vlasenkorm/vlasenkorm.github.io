@@ -1,14 +1,25 @@
 //import { Wrapper } from "./menuComponents";
 
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import LngSwitch from "../lngSwitch";
 
 const Menu: React.FC = () => {
 
+  const {t, i18n } = useTranslation();
+
   return (
     <Wrapper>
-      <FirstBox><h3>Roman Vlasenko<br />Front-end Engineer</h3></FirstBox>
-      <Box><Rectangle/></Box>
-      <Box><h3>vlasenkorm@gmail.com</h3></Box>
+      <FirstBox>
+        <h3>
+          {t('name')}<br />
+          {t('title')}
+        </h3>
+      </FirstBox>
+      <Box>
+      <LngSwitch/>
+      </Box>
+      <Box><h3>Mail: vlasenkorm@gmail.com</h3></Box>
     </Wrapper>
   );
 };
@@ -26,18 +37,16 @@ export const Wrapper = styled.div`
   background: #2a2a2a;
 `
 export const Rectangle = styled.div`
- width: -webkit-fill-available;
- height: 40px;
- border: solid white 2px;
+  height: 40px;
+  border: solid white 2px;
 `
-
 
 export const Box = styled.div`
- width: 200px;
- text-align: center;
+  width: 200px;
+  text-align: center;
 `
 export const FirstBox = styled.div`
- width: 200px;
- text-align: left;
- margin-left: 20px;
+  width: 200px;
+  text-align: left;
+  margin-left: 20px;
 `
