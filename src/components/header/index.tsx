@@ -1,8 +1,8 @@
-//import { Wrapper } from "./menuComponents";
-
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import LngSwitch from "../lngSwitch";
+
+
+export const HeaderHeight = 100;
 
 const Menu: React.FC = () => {
 
@@ -16,10 +16,7 @@ const Menu: React.FC = () => {
           {t('title')}
         </h3>
       </FirstBox>
-      <Box>
-      <LngSwitch/>
-      </Box>
-      <Box><h3>Mail: vlasenkorm@gmail.com</h3></Box>
+      <Box></Box>
     </Wrapper>
   );
 };
@@ -28,6 +25,7 @@ export default Menu;
 
 
 export const Wrapper = styled.div`
+  height: ${HeaderHeight}px;
   display: flex;
   border-bottom: solid white 2px;
   justify-content: space-between;
