@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const HeaderHeight = 100;
 
-const Menu: React.FC = () => {
+const Header: React.FC = () => {
 
   const {t, i18n } = useTranslation();
 
@@ -16,15 +16,16 @@ const Menu: React.FC = () => {
           {t('title')}
         </h3>
       </FirstBox>
-      <Box></Box>
+      <Box>
+      </Box>
     </Wrapper>
   );
 };
 
-export default Menu;
+export default Header;
 
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   height: ${HeaderHeight}px;
   display: flex;
   border-bottom: solid white 2px;
@@ -34,16 +35,16 @@ export const Wrapper = styled.div`
   box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4) inset;
   background: #2a2a2a;
 `
-export const Rectangle = styled.div`
+const Rectangle = styled.div`
   height: 40px;
   border: solid white 2px;
 `
 
-export const Box = styled.div`
+const Box = styled.div`
   width: 200px;
   text-align: center;
 `
-export const FirstBox = styled.div`
+const FirstBox = styled.div`
   width: 200px;
   text-align: left;
   margin-left: 20px;

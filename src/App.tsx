@@ -1,11 +1,36 @@
 import React from "react";
+import './i18n/config';
 import styled, { createGlobalStyle } from 'styled-components'
 import Header, { HeaderHeight } from "./components/header";
 import CV from "./components/cv";
-import './i18n/config';
 import LngSwitch from "./components/lngSwitch";
+import Proverb from "./components/phrazes";
+import Menu from "./components/menu";
 
 export const BodyPadding = 20;
+
+
+const App: React.FC = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+      <Body style={{ backgroundImage: "url(/images/18653.png)" }}>
+        <MenuWrapper>
+       
+            <Menu/>
+         
+          <MenuBox>
+            <Proverb />
+          </MenuBox>
+        </MenuWrapper>
+        <CV />
+        <LngSwitch />
+      </Body>
+    </>
+  );
+};
+export default App;
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 const Body = styled.div`
+  height: 1120px;
   display: flex;
   justify-content: space-around;
   padding: ${BodyPadding}px;
@@ -26,48 +52,22 @@ const MenuBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
   color: white;
   background-color: #2a2a2a;
-  border-radius: 10px;
-  border: solid 2px white;
+  border: solid 1px white;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
-  font-family: "Kalam";
 `
 
-const FlexBox = styled.div`
-  height: calc(100vh - ${HeaderHeight}px - ${BodyPadding*2}px);
+const MenuWrapper = styled.div`
+  height: calc(100vh - ${HeaderHeight}px - ${BodyPadding * 2}px);
+  width: 450px;
   position: sticky;
-  top: calc(${HeaderHeight/2}px + ${BodyPadding}px);
+  top: calc(${HeaderHeight / 2}px + ${BodyPadding}px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   `
 
-const App: React.FC = () => {
-  return (
-    <>
-      <GlobalStyle />
-      <Header />
 
-      <Body style={{ backgroundImage: "url(/images/18653.png)" }}>
-      <FlexBox>
-        <MenuBox>
-          <h3>Mail: vlasenkorm@gmail.com</h3>
-          localization
-          <LngSwitch />
-        </MenuBox>
-        <MenuBox>
-          <div>
-            What is evil? Everything that comes from weakness.<br/>
-            Was it schlecht? Alles, was aus der Schwäche stammt.<br/>
-            F.W. Nietzsche “Antichrist”<br/>
-            Friedrich Wilhelm Nietzsche: Der Antichris<br/>
-          </div>
-        </MenuBox>
-        </FlexBox>
-        <CV />
-      </Body>
-    </>
-  );
-};
-export default App;
+

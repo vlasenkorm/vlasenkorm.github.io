@@ -1,14 +1,23 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import { BodyPadding } from "../../App";
+import { HeaderHeight } from "../header";
 
 const LngSwitch: React.FC = () => {
 
   const { i18n } = useTranslation();
-
+ 
   return (
     <Wrapper>
-      <StyleButton onClick={() => i18n.changeLanguage('en')}>EN</StyleButton>
-      <StyleButton onClick={() => i18n.changeLanguage('ua')}>UA</StyleButton>
+      <StyleButton 
+        $active={i18n.language === 'en' ? 1 : 0} 
+        onClick={() =>  i18n.changeLanguage('en')}
+      >EN</StyleButton>
+      <Divider />
+      <StyleButton 
+        $active={i18n.language === 'ua' ? 1 : 0} 
+        onClick={() =>  i18n.changeLanguage('ua')}
+      >UA</StyleButton>
     </Wrapper>
   );
 };
@@ -16,21 +25,30 @@ const LngSwitch: React.FC = () => {
 export default LngSwitch;
 
 
-export const Wrapper = styled.div`
-  width: fit-content;
+const Wrapper = styled.div`
+  height: fit-content;
+  position: sticky;
+  top: calc(${HeaderHeight / 2}px + 20px);
+  display: flex;
+  flex-direction: column;
+  background-color: #2a2a2a;
   border: solid white 2px;
-  padding: 2px;
   border-radius: 2px;
 `
-export const StyleButton = styled.button`
+
+const Divider = styled.div`
+  height: 2px;
+  background-color: white;
+`
+
+const StyleButton = styled.button<{$active: number}>`
   height: 40px;
   width: 80px;
   background-color: transparent;
   border: none;
-  color: white;
+  color: ${props => props.$active ? 'cornflowerblue' : 'white'};
   font-size: large;
   &:hover {
-    color: palevioletred;
     box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4) inset 
   }
 `
