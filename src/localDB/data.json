@@ -1,0 +1,20 @@
+{
+	"nietzsche": {
+		"text": "What is evil? Everything that comes from weakness.",
+		"origin_text": "Was it schlecht? Alles, was aus der Schwäche stammt.",
+		"author": "F.W. Nietzsche “Antichrist",
+		"origin_author": "Friedrich Wilhelm Nietzsche: Der Antichrist"
+	},
+	"la_rochefoucauld": {
+		"text": "It takes great talent to hide your talent.",
+		"origin_text": "C'est une grande habileté que de savoir cacher son habileté.",
+		"author": "La Rochefoucauld “Reflection or Didactic Proverbs” or “Collection of Proverbs” (Proverbs No. 245)",
+		"origin_author": "Réflexions ou sentences et maximes morales"
+	},
+	"adam_smith": {
+		"text": "Humans are the only animals that trade. No dogs exchange bones.",
+		"origin_text": "Man is the only animal that does business; No dog exchanges bones with another.",
+		"author": "Adam Smith “The Wealth of Nations”",
+		"origin_author": "An Inquiry into the Nature and Causes of the Wealth of Nations"
+	}
+}

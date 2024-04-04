@@ -9,7 +9,6 @@ import Menu from "./components/menu";
 
 export const BodyPadding = 20;
 
-
 const App: React.FC = () => {
   return (
     <>

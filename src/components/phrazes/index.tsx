@@ -1,11 +1,32 @@
 import styled from "styled-components";
+//TODO Move to API
+import data from "../../localDB/data.json"
+import { useEffect, useState } from "react";
+
 
 const Proverb: React.FC = () => {
+  const [index, setIndex] = useState(0);
+  const list = Object.values(data)
+ 
+useEffect(() => {
+    const interval = setInterval(() => {
+      
+      if (index < list.length - 1) {
+        setIndex((i) => i + 1)
+      } else {
+        setIndex(0)
+      }
+
+    }, 12000);
+    return () => clearInterval(interval);
+  }, [index]);
+
 
   return (
     <>
-      <Box>"What is evil? Everything that comes from weakness."<br />
-        "Was it schlecht? Alles, was aus der Schwäche stammt."
+      <Box>
+        "{list[index].text}"<br />
+        "{list[index].origin_text}"
       </Box>
       <BottomBox>
       <SVGLoader  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -19,8 +40,8 @@ const Proverb: React.FC = () => {
         />
       </SVGLoader>
       <FontBox>
-        F.W. Nietzsche “Antichrist”<br />
-        Friedrich Wilhelm Nietzsche: Der Antichris
+        {list[index].author}<br />
+        {list[index].origin_author}
       </FontBox>
       </BottomBox>
     </>
@@ -49,7 +70,7 @@ const SVGLoader = styled.svg`
   }
 
   .spin {
-    animation: progress 4s linear infinite;
+    animation: progress 12s linear infinite;
   }
 `
 
