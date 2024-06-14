@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { BodyPadding } from "../../App";
-import { HeaderHeight } from "../header";
+import { HeaderHeight } from "../../header";
 
 const LngSwitch: React.FC = () => {
 
@@ -32,6 +31,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #2a2a2a;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
   border: solid white 2px;
   border-radius: 2px;
 `

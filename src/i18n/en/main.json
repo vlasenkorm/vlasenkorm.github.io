@@ -13,39 +13,53 @@
     },
     "frameworks": {
       "title":"Tools and frameworks",
-      "list": "React, TypeScript, MobX, Redux, React Hooks, Functional Components, Styled Components, NextJS Vue3, Vuex, Vue Material Angular 13, RxJS. Node.JS, Express.JS, RESTful API, Sequelize, Docker."
+      "list":{
+        "react": {
+          "main": "React, NextJS",
+          "visual": "React Hooks, Functional Components, Styled Components",
+          "store": "Redux/Redux Toolkit, MobX"
+        },
+        "other": " Vue3, Vuex, Vue Material Angular 13, RxJS. Node.JS, Express.JS, RESTful API, Sequelize, Docker."
+      } 
     },
     "technologies": {
       "title":"Additional technologies",
-      "list": "HTML, CSS, SCSS/SASS, Figma, Adaptive Web, Jest, Web3, GraphQL, SQL, Webpack, Babel, Storybook, Git."
+      "list": "HTML/HTML5, CSS/CSS3, SCSS/SASS, Figma, Storybook, Jest, Web3, GraphQL, SQL, Webpack, Git."
     },
     "databases": {
       "title":"Databases",
-      "list": "MongoDB, PostgreSQL, MySQL"
+      "list": "MongoDB, PostgreSQL"
     } 
   },
   "experience" : {
     "title":"Work experience",
+    "headers": {
+      "role": "Role: ",
+      "company": "Company: ", 
+      "description": "Description: ",
+      "technologies" : "Technologies: ",
+      "year": "Year: "
+    },
     "investing": {
-      "role": "Role: Full-Stack Engineer",
-      "title":"Company: G.I.S. INVESTING",
-      "description": "Description: Building customer-facing consumer web and mobile applications.Build architecture of project. Troubleshooting, finding optimal solutions.",
-      "technologies" : "Technologies: JavaScript, React, TypeScript, Redux, React Hooks, Functional Components, Styled Components.",
-      "year": "Year: 2022 - present"
+      "role": "Full-Stack Engineer",
+      "company": "G.I.S. INVESTING",
+      "description": "Building customer-facing consumer web and mobile applications.Build architecture of project. Troubleshooting, finding optimal solutions.",
+      "technologies" : "TypeScript, React, Redux, Styled Components, Express.JS, RESTful API, Sequelize, Docker.",
+      "year": "2022 - present"
     },
     "pragma": {
-      "role": "Role: Front-end Developer",
-      "title":"Company: Pragma",
-      "description": "Description: Work on Cryptocurrency projects. Communication with the client. Building an application architecture, introducing new ideas. Work on team, communicate,  finde resolve problems. Suggestions for improving current solutions.",
-      "technologies" : "Technologies: JavaScript, React, TypeScript, Styled Components, GraphQL, Web3",
-      "year": "Year: 2021 - 2022"
+      "role": "Front-end Developer",
+      "company": "Pragma",
+      "description": "Work on Cryptocurrency projects. Communication with the client. Building an application architecture, introducing new ideas. Work on team, communicate,  finde resolve problems. Suggestions for improving current solutions.",
+      "technologies" : "JavaScript, TypeScript, React, Styled Components, API GraphQL, Web3",
+      "year": "2021 - 2022"
     },
     "acropolium": {
-      "role": "Role: Full-Stack Engineer",
-      "title":"Company: Acropolium",
-      "description": "Description: Training by the company for the position. Create and modify Front-end projects. API creation and database setup. Construction of the program architecture, implementation of new ideas. Improving both yourself and new employees. Communication with the client.",
-      "technologies" : "Technologies: JavaScript, React, Vue, Angular, Node.JS.",
-      "year": "Year: 2019 – 2021"
+      "role": "Full-Stack Engineer",
+      "company": "Acropolium" ,
+      "description": "Training by the company for the position. Create and modify Front-end projects. API creation and database setup. Construction of the program architecture, implementation of new ideas. Improving both yourself and new employees. Communication with the client.",
+      "technologies" : "JavaScript, React, Vue, Angular, Node.JS.",
+      "year": "2019 – 2021"
     }
   },
   "education": { 

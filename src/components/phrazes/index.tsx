@@ -2,6 +2,7 @@ import styled from "styled-components";
 //TODO Move to API
 import data from "../../localDB/data.json"
 import { useEffect, useState } from "react";
+import { useGStore } from "@src/store";
 
 
 const Proverb: React.FC = () => {
@@ -23,7 +24,7 @@ useEffect(() => {
 
 
   return (
-    <>
+    <Wrapper $theme={useGStore((state) => state.theme)}>
       <Box>
         "{list[index].text}"<br />
         "{list[index].origin_text}"
@@ -44,11 +45,22 @@ useEffect(() => {
         {list[index].origin_author}
       </FontBox>
       </BottomBox>
-    </>
+    </Wrapper>
   );
 };
 
 export default Proverb;
+
+const Wrapper = styled.div<{$theme: boolean}>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: solid 1px white;
+  background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a' };
+  color: ${props => props.$theme ? 'black' : 'white' };
+  box-shadow: 0px 0px 25px ${props => props.$theme ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)' }  inset;
+`
 
 const SVGLoader = styled.svg`
   height: 30px;

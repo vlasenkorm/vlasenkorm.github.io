@@ -16,6 +16,8 @@ const CV: React.FC = () => {
     setY(0)
   }
 
+  const list = ["investing", "pragma", "acropolium" ]
+
   return (
     <Conteiner onMouseMove={move} onMouseLeave={clear}>
       <Wrapper $rotate_x={Y * 0.001} $rotate_y={X * -0.001}>
@@ -25,7 +27,7 @@ const CV: React.FC = () => {
         </p>
 
         <h3>{t('summary.title')}</h3>
-        <p>{t('summary.text')}</p>
+        <StyledP>{t('summary.text')}</StyledP>
 
         <h3>{t('skills.title')}</h3>
         <StyledTable>
@@ -36,7 +38,11 @@ const CV: React.FC = () => {
             </tr>
             <tr>
               <td>{t('skills.frameworks.title')}</td>
-              <td>{t('skills.frameworks.list')}</td>
+              <td>
+                {t('skills.frameworks.list.react.main')}<br />
+                {t('skills.frameworks.list.react.visual')}<br />
+                {t('skills.frameworks.list.react.store')}
+              </td>
             </tr>
             <tr>
               <td>{t('skills.technologies.title')}</td>
@@ -50,34 +56,22 @@ const CV: React.FC = () => {
         </StyledTable>
 
         <h3>{t('experience.title')}</h3>
-        <p>
-          {t('experience.investing.role')}<br />
-          {t('experience.investing.title')}<br />
-          {t('experience.investing.description')}<br />
-          {t('experience.investing.technologies')}<br />
-          {t('experience.investing.year')}<br />
-        </p>
-        <p>
-          {t('experience.pragma.role')}<br />
-          {t('experience.pragma.title')}<br />
-          {t('experience.pragma.description')}<br />
-          {t('experience.pragma.technologies')}<br />
-          {t('experience.pragma.year')}<br />
-        </p>
-        <p>
-          {t('experience.acropolium.role')}<br />
-          {t('experience.acropolium.title')}<br />
-          {t('experience.acropolium.description')}<br />
-          {t('experience.acropolium.technologies')}<br />
-          {t('experience.acropolium.year')}<br />
-        </p>
+
+        {/* ["investing", "pragma", "acropolium" ] */}
+        {list.map((element, i) =>  <StyledP key={i}>
+          <strong>{t('experience.headers.role')}</strong>{t(`experience.${element}.role`)}<br />
+          <strong>{t('experience.headers.company')}</strong>{t(`experience.${element}.company`)}<br />
+          <strong>{t('experience.headers.description')}</strong>{t(`experience.${element}.description`)}<br />
+          <strong>{t('experience.headers.technologies')}</strong>{t(`experience.${element}.technologies`)}<br />
+          <strong>{t('experience.headers.year')}</strong>{t(`experience.${element}.year`)}<br />
+        </StyledP> )}
 
         <h3>{t('education.title')}</h3>
         <p>
           {t('education.university')}<br />
           {t('education.degree')}
         </p>
-        
+
         <h3>{t('languages.title')}</h3>
         <p>
           {t('languages.en')}<br />
@@ -109,7 +103,11 @@ const StyledTable = styled.table`
   border-collapse: collapse;
   tr > td {
     border: 2px solid;
+    padding: 5px;
   }
+`
+const StyledP = styled.p`
+  line-height: 20px;
 `
 
 const Conteiner = styled.div`

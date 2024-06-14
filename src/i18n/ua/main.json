@@ -13,39 +13,53 @@
     },
     "frameworks": {
       "title":"Бібліотеки",
-      "list": "React, TypeScript, MobX, Redux, React Hooks, Functional Components, Styled Components, NextJS Vue3, Vuex, Vue Material Angular 13, RxJS. Node.JS, Express.JS, RESTful API, Sequelize, Docker."
+      "list":{
+        "react": {
+          "main": "React, NextJS",
+          "visual": "Functional Components, React Hooks, Styled Components",
+          "store": "Redux/Redux Toolkit, MobX"
+        },
+        "other": "NextJS Vue3, Vuex, Vue Material Angular 13, RxJS. Node.JS, Express.JS, RESTful API, Sequelize, Docker."
+      } 
     },
     "technologies": {
       "title":"Додаткові технлогії",
-      "list": "HTML, CSS, SCSS/SASS, Figma, Adaptive Web, Jest, Web3, GraphQL, SQL, Webpack, Babel, Storybook, Git."
+      "list": "HTML/HTML5, CSS/CSS3, SCSS/SASS, Figma, Storybook, Jest, Web3, GraphQL, SQL, Webpack, Git."
     },
     "databases": {
       "title":"Бази данних",
-      "list": "MongoDB, PostgreSQL, MySQL"
+      "list": "MongoDB, PostgreSQL"
     }
   },
   "experience" : {
-    "title":"Work experience",
+    "title":"Досвід роботи",
+    "headers": {
+      "role": "Посада: ",
+      "company": "Компанія: ", 
+      "description": "Відповідальність: ",
+      "technologies" : "Технології: ",
+      "year": "Роки: "
+    },
     "investing": {
-      "role": "Посада: Full-Stack Engineer",
-      "title":"Компанія: G.I.S. INVESTING",
-      "description": "Відповідальність: Створення клієнтоорієнтованих веб та мобільних додатків. Розробка архітектури проекту. Усунення несправностей, пошук оптимальних рішень.",
-      "technologies" : "Технології: JavaScript, React, TypeScript, Redux, React Hooks, Functional Components, Styled Components.",
-      "year": "Роки: 2022 - зараз"
+      "role": "Full-Stack Engineer",
+      "title":"G.I.S. INVESTING",
+      "description": "Створення клієнтоорієнтованих веб та мобільних додатків. Розробка архітектури проекту. Усунення несправностей, пошук оптимальних рішень.",
+      "technologies" : "TypeScript, React, Redux, Styled Components, Express.JS, RESTful API, Sequelize, Docker.",
+      "year": "2022 - зараз"
     },
     "pragma": {
-      "role": "Посада: Front-end Developer",
-      "title":"Компанія: Pragma",
-      "description": "Відповідальність: Робота над криптовалютними проектами. Спілкування з клієнтом. Побудова архітектури програми, впровадження нових ідей. Працювати в команді, спілкуватися, знаходити вирішення проблем. Пропозиції щодо вдосконалення поточних рішень.",
-      "technologies" : "Технології: JavaScript, React, TypeScript, Styled Components, GraphQL, Web3",
-      "year": "Роки: 2021 - 2022"
+      "role": "Front-end Developer",
+      "title":"Pragma",
+      "description": "Робота над криптовалютними проектами. Спілкування з клієнтом. Побудова архітектури програми, впровадження нових ідей. Працювати в команді, спілкуватися, знаходити вирішення проблем. Пропозиції щодо вдосконалення поточних рішень.",
+      "technologies" : "JavaScript, React, TypeScript, Styled Components, API GraphQL, Web3",
+      "year": "2021 - 2022"
     },
     "acropolium": {
-      "role": "Посада: Full-Stack Engineer",
-      "title":"Компанія: Acropolium",
-      "description": "Відповідальність: Навчання компанією на позицію. Створюйте та змінюйте Front-end проекти. Створення API та налаштування бази данних. Побудова архітектури програми, впровадження нових ідей. Вдосконалення як себе, так і нових співробітників. Спілкування з клієнтом.",
-      "technologies" : "Технології: JavaScript, React, Vue, Angular, Node.JS.",
-      "year": "Роки: 2019 – 2021"
+      "role": "Full-Stack Engineer",
+      "title":"Acropolium",
+      "description": "Навчання компанією на позицію. Створюйте та змінюйте Front-end проекти. Створення API та налаштування бази данних. Побудова архітектури програми, впровадження нових ідей. Вдосконалення як себе, так і нових співробітників. Спілкування з клієнтом.",
+      "technologies" : "JavaScript, React, Vue, Angular, Node.JS.",
+      "year": "2019 – 2021"
     }
   },
   "education": { 
