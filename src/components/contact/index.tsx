@@ -25,7 +25,7 @@ const Wrapper = styled.div<{$theme: boolean}>`
   font-family: Roboto;
   font-size: 18px;
   padding: 10px;
-  border: solid 1px #f8f8f8;
+  border: solid 1px ${props => props.$theme ? '#2a2a2a' :'#f8f8f8'};
   background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a' };
   color: ${props => props.$theme ? 'black' : '#f8f8f8' };
   box-shadow: 0px 0px 25px ${props => props.$theme ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)' }  inset;

@@ -35,7 +35,7 @@ useEffect(() => {
           cx="50" cy="50" 
           fill="none"
           r="44" strokeWidth="10" 
-          stroke="white" 
+          stroke={useGStore((state) => state.theme) ? '#2a2a2a' :'#f8f8f8'}
           strokeDasharray="200 1400"
           strokeLinecap="round"
         />
@@ -56,7 +56,7 @@ const Wrapper = styled.div<{$theme: boolean}>`
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  border: solid 1px white;
+  border: solid 1px ${props => props.$theme ? '#2a2a2a' :'#f8f8f8'};
   background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a' };
   color: ${props => props.$theme ? 'black' : 'white' };
   box-shadow: 0px 0px 25px ${props => props.$theme ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)' }  inset;

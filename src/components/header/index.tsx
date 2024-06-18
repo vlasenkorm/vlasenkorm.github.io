@@ -26,7 +26,7 @@ export default Header;
 const Wrapper = styled.div<{$theme: boolean}>`
   height: ${HeaderHeight}px;
   display: flex;
-  border-bottom: solid white 2px;
+  border-bottom: solid ${props => props.$theme ? '#2a2a2a' :'#f8f8f8'} 2px;
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
