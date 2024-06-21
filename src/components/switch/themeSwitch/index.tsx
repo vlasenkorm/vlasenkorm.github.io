@@ -7,7 +7,6 @@ const ToggleSlider: React.FC = () => {
   const theme = useGStore((state) => state.theme)
   const changeTheme = useGStore((state) => state.changeTheme)
 
-  console.log(theme)
 
   return (
     <Wrapper>

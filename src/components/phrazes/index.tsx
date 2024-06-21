@@ -59,7 +59,7 @@ const Wrapper = styled.div<{$theme: boolean}>`
   border: solid 1px ${props => props.$theme ? '#2a2a2a' :'#f8f8f8'};
   background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a' };
   color: ${props => props.$theme ? 'black' : 'white' };
-  box-shadow: 0px 0px 25px ${props => props.$theme ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.4)' }  inset;
+ 
 `
 
 const SVGLoader = styled.svg`
