@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Copy from "./copy";
-import Link from "./link";
+import Copy from "../icons/copy";
+import Link from "../icons/link";
 import { useGStore } from "@src/store";
 
 

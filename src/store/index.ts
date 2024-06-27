@@ -6,7 +6,21 @@ interface StoreState {
     decrease: (by: number) => void
 }
 
+interface ThemeState {
+    theme: boolean 
+    changeTheme: () => void
+}
 
+interface ScreenSizeType {
+    width: number;
+    height: number;
+    isMobile: boolean,
+    isSMDesctop: boolean,
+    isLRDesctop: boolean,
+    isTablet: boolean,
+  }
+
+  type StoreGState = ScreenSizeType & ThemeState
 //============================
 
 export const useStore = create<StoreState>()((set) => ({
@@ -16,14 +30,17 @@ export const useStore = create<StoreState>()((set) => ({
 }))
 
 
-interface StoreGState {
-    theme: boolean
-    changeTheme: () => void
-}
+
 
 export const useGStore = create<StoreGState>()((set) => ({
     theme: false,
-    changeTheme: () => set((state) => ({ theme: !state.theme }))
+    changeTheme: () => set((state) => ({ theme: !state.theme })),
+    width: 0,
+    height: 0,
+    isMobile: false,
+    isSMDesctop: false,
+    isLRDesctop: false,
+    isTablet: false
 }))
 
 
