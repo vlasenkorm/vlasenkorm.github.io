@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
-
 const MobileSize = 430;
 const TabletSize = 1024;
-const DesctopSize = 1450;
+const DesktopSize = 1450;
 
 declare global {
   interface Navigator {
@@ -16,8 +15,8 @@ interface ScreenSizeType {
   width: number;
   height: number;
   isMobile: boolean,
-  isSMDesctop: boolean,
-  isLRDesctop: boolean,
+  isSMDesktop: boolean,
+  isLRDesktop: boolean,
   isTablet: boolean,
 }
 
@@ -56,14 +55,11 @@ const useScreenSize = (): ScreenSizeType => {
     height: window.innerHeight,
     isMobile: false,
     isTablet: false,
-    isSMDesctop: false,
-    isLRDesctop: false
+    isSMDesktop: false,
+    isLRDesktop: false
   });
 
   useEffect(() => {
-    
-      
-
     const handleResize = () => {
       
       setScreenSize({
@@ -72,8 +68,8 @@ const useScreenSize = (): ScreenSizeType => {
         height: window.innerHeight,
         isMobile: window.innerWidth > 0 && window.innerWidth <= MobileSize,
         isTablet: window.innerWidth > MobileSize && window.innerWidth <= TabletSize,
-        isSMDesctop: window.innerWidth > TabletSize && window.innerWidth <= DesctopSize,
-        isLRDesctop: window.innerWidth > DesctopSize
+        isSMDesktop: window.innerWidth > TabletSize && window.innerWidth <= DesktopSize,
+        isLRDesktop: window.innerWidth > DesktopSize
       });
     };
 
@@ -83,6 +79,7 @@ const useScreenSize = (): ScreenSizeType => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   return screenSize;
 };

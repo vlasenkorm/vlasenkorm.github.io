@@ -4,10 +4,11 @@ import styled, { createGlobalStyle } from 'styled-components'
 import Header, { HeaderHeight } from "./components/header";
 import CV from "./components/cv";
 import LngSwitch from "./components/switch/lngSwitch";
-import Proverb from "./components/phrazes";
+import Proverb from "./components/phrases";
 import Contact from "./components/contact";
 import { useGStore } from "./store";
 import { Background } from "./components/background";
+import DownloadPDF from "./components/downloadPDF";
 
 export const BodyPadding = 20;
 
@@ -16,17 +17,18 @@ const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
-
-      {/* style={{ backgroundImage: "url(/images/18653.png)" }} */}
       <Header />
       <Body $theme={useGStore((state) => state.theme)}>
       <Background />
-        <LeftWrapper>
+        <LeftSection>
           <Contact />
           <Proverb />
-        </LeftWrapper>
+        </LeftSection>
         <CV />
-        <LngSwitch />
+        <RightSection>
+          <LngSwitch />
+          <DownloadPDF/>
+        </RightSection>
       </Body>
     </>
   );
@@ -46,7 +48,7 @@ const Body = styled.div<{ $theme: boolean }>`
   background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a'};
 `
 
-const LeftWrapper = styled.div`
+const LeftSection = styled.section`
   height: calc(100vh - ${HeaderHeight}px - ${BodyPadding * 2}px);
   width: 450px;
   position: sticky;
@@ -56,5 +58,12 @@ const LeftWrapper = styled.div`
   justify-content: space-between;
   `
 
-
+const RightSection = styled.aside`
+  position: sticky;
+  top: calc(${HeaderHeight / 2}px + 20px);
+  height: calc(100vh - ${HeaderHeight}px - ${BodyPadding * 2}px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`
 

@@ -4,6 +4,7 @@ import ToggleSlider from "../switch/themeSwitch";
 import { useGStore } from "@src/store";
 import useScreenSize from "@src/utils/resize";
 import Logo from "../icons/logo";
+import { useReactToPrint } from "react-to-print";
 
 export const HeaderHeight = 100;
 
@@ -18,6 +19,9 @@ const Header: React.FC = () => {
 
   const fill = useGStore((state) => state.theme) ? "#2a2a2a" : "#f8f8f8"
   const hide = useGStore((state) => state.theme) ? "#f8f8f8" : "#2a2a2a"
+  
+
+ 
 
   return (
     <Wrapper $theme={useGStore((state) => state.theme)}>
@@ -28,6 +32,7 @@ const Header: React.FC = () => {
           hide={hide}
         />
       </div>
+      {/* {screenSize.height}{screenSize.width} */}
       <h3>{t('name')}<br />{t('title')}</h3>
       <ToggleSlider />
     </Wrapper>
