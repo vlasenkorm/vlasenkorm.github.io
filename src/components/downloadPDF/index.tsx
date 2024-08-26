@@ -13,7 +13,7 @@ const DownloadPDF: React.FC = () => {
 
   return (
     <StyleButton onClick={handlePrint}>
-      <DownloadComponent />/<PrintComponent/>
+      <DownloadComponent />/<PrintComponent />
     </StyleButton>
   );
 };

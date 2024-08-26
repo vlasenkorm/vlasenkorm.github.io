@@ -1,34 +1,41 @@
 import React from "react";
-import './i18n/config';
-import styled, { createGlobalStyle } from 'styled-components'
+import "./i18n/config";
+import styled, { createGlobalStyle } from "styled-components";
+import { useGStore } from "./store";
 import Header, { HeaderHeight } from "./components/header";
 import CV from "./components/cv";
 import LngSwitch from "./components/switch/lngSwitch";
 import Proverb from "./components/phrases";
 import Contact from "./components/contact";
-import { useGStore } from "./store";
 import { Background } from "./components/background";
 import DownloadPDF from "./components/downloadPDF";
+import useScreenSize from "./utils/resizeHook";
 
 export const BodyPadding = 20;
 
 const App: React.FC = () => {
-
+  const screenSize = useScreenSize();
   return (
     <>
       <GlobalStyle />
       <Header />
       <Body $theme={useGStore((state) => state.theme)}>
-      <Background />
-        <LeftSection>
-          <Contact />
-          <Proverb />
-        </LeftSection>
-        <CV />
-        <RightSection>
-          <LngSwitch />
-          <DownloadPDF/>
-        </RightSection>
+        <Background />
+        {screenSize.isMobile ? (
+          <CV />
+        ) : (
+          <>
+            <LeftSection>
+              <Contact />
+              <Proverb />
+            </LeftSection>
+            <CV />
+            <RightSection>
+              <LngSwitch />
+              <DownloadPDF />
+            </RightSection>
+          </>
+        )}
       </Body>
     </>
   );
@@ -39,14 +46,14 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
   }
-`
+`;
 const Body = styled.div<{ $theme: boolean }>`
   display: flex;
   position: relative;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: ${BodyPadding}px;
-  background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a'};
-`
+  background: ${(props) => (props.$theme ? "#f8f8f8" : "#2a2a2a")};
+`;
 
 const LeftSection = styled.section`
   height: calc(100vh - ${HeaderHeight}px - ${BodyPadding * 2}px);
@@ -56,7 +63,7 @@ const LeftSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  `
+`;
 
 const RightSection = styled.aside`
   position: sticky;
@@ -65,5 +72,4 @@ const RightSection = styled.aside`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-`
-
+`;

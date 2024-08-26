@@ -20,8 +20,8 @@ const PrintComponent: React.FC = () => {
     >
       <path
         stroke="#ffffff"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinejoin="round"
+        strokeWidth="2"
         d="M8 17H5a1 1 0 01-1-1v-5a2 2 0 012-2h12a2 2 0 012 2v5a1 1 0 01-1 1h-3M8 4h8v5H8V4zm0 11h8v4H8v-4z"
       />
       <circle cx="7" cy="12" r="1" fill="#ffffff" />

@@ -35,14 +35,13 @@ export const Background = () => {
     //console.log(container);
   };
 
-  const dd = useGStore((state) => state.theme)
-
+  const dd = useGStore((state) => state.theme);
 
   const optionsWhite: ISourceOptions = useMemo(
     () => ({
       background: {
         color: {
-          value:  "#f8f8f8",
+          value: "#f8f8f8",
         },
       },
       fpsLimit: 120,
@@ -98,10 +97,8 @@ export const Background = () => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
-
-
 
   const optionsBlack: ISourceOptions = useMemo(
     () => ({
@@ -163,7 +160,7 @@ export const Background = () => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
   if (init) {
@@ -176,14 +173,13 @@ export const Background = () => {
     );
   }
 
-
   return <></>;
 };
 
-
-
 const SParticles = styled(Particles)`
   position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
 `;

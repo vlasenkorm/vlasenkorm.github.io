@@ -23,9 +23,9 @@ const DownloadComponent: React.FC = () => {
           id="Vector"
           d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
           stroke="#ffffff"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </SVG>
