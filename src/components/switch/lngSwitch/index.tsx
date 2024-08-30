@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 
 const LngSwitch: React.FC = () => {
   const { i18n } = useTranslation();
-  const localTheme = useGStore((state) => state.theme);
+  const localTheme = useStore((state) => state.theme);
 
   return (
     <Wrapper $theme={localTheme}>

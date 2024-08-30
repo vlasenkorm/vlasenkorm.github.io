@@ -1,10 +1,10 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { hasTouchScreen } from "./hasTouchScreen";
+import { useStore } from "@src/store";
 
 const MobileBreak = 500;
 const MobileSize = 1024;
 const DesktopBreak = 1450;
-
 
 interface ScreenSizeType {
   hasTouchScreen: boolean;
@@ -19,37 +19,46 @@ interface ScreenSizeType {
 }
 
 const useScreenSize = (): ScreenSizeType => {
-  
-  const _hasTouchScreen = hasTouchScreen()
 
+  const _hasTouchScreen = useCallback(hasTouchScreen, [navigator])();
+  //local
   const [screenSize, setScreenSize] = useState({
     hasTouchScreen: _hasTouchScreen,
     width: window.innerWidth,
     height: window.innerHeight,
     isMobile: _hasTouchScreen,
     isDesktop: !_hasTouchScreen,
-    SM: false,
-    LM: false,
-    SD: false,
-    LD: false,
+    SM: window.innerWidth <= MobileBreak, // <500
+    LM: window.innerWidth > MobileBreak && window.innerWidth <= MobileSize, // 500<>1024
+    SD: window.innerWidth > MobileSize && window.innerWidth <= DesktopBreak, // 1024<>1450
+    LD: window.innerWidth > DesktopBreak, // >1450
+  });
+
+  //Store
+  const changeScreenSize = useStore((state) => state.changeScreenSize);
+
+  changeScreenSize({
+    width: screenSize.width,
+    height:screenSize.height,
+    isMobile: screenSize.isMobile,
+    isDesktop: screenSize.isDesktop,
+    SM: screenSize.SM,
+    LM: screenSize.LM,
+    SD: screenSize.SD,
+    LD: screenSize.LD,
   });
 
   useEffect(() => {
     const handleResize = () => {
-
+      console.log("handleResize");
       setScreenSize({
-        //-Base
-        hasTouchScreen: _hasTouchScreen,
+        ...screenSize,
         width: window.innerWidth,
         height: window.innerHeight,
-        //--Main
-        isMobile: _hasTouchScreen,
-        isDesktop: !_hasTouchScreen,
-        //---Extend
-        SM: window.innerWidth <= MobileBreak,// <500
-        LM: window.innerWidth > MobileBreak && window.innerWidth <= MobileSize,// 500<>1024
-        SD: window.innerWidth > MobileSize && window.innerWidth <= DesktopBreak,// 1024<>1450
-        LD: window.innerWidth > DesktopBreak,// >1450
+        SM: window.innerWidth <= MobileBreak, // <500
+        LM: window.innerWidth > MobileBreak && window.innerWidth <= MobileSize, // 500<>1024
+        SD: window.innerWidth > MobileSize && window.innerWidth <= DesktopBreak, // 1024<>1450
+        LD: window.innerWidth > DesktopBreak, // >1450
       });
     };
 
@@ -59,7 +68,7 @@ const useScreenSize = (): ScreenSizeType => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+    console.log('useScreenSize = ()', screenSize)
   return screenSize;
 };
 

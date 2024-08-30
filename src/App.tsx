@@ -1,7 +1,7 @@
 import React from "react";
 import "./i18n/config";
 import styled, { createGlobalStyle } from "styled-components";
-import { useGStore } from "./store";
+import { useStore } from "./store";
 import Header, { HeaderHeight } from "./components/header";
 import CV from "./components/cv";
 import LngSwitch from "./components/switch/lngSwitch";
@@ -14,17 +14,24 @@ import useScreenSize from "./utils/resizeHook";
 export const BodyPadding = 20;
 
 const App: React.FC = () => {
-  const screenSize = useScreenSize();
+  useScreenSize();
+
+  const isMobile = useStore((state) => state.isMobile);
+
+  console.log("isMobile", isMobile);
   return (
     <>
       <GlobalStyle />
       <Header />
-      <Body $theme={useGStore((state) => state.theme)}>
-        <Background />
-        {screenSize.isMobile ? (
-          <CV />
+      <Body $theme={useStore((state) => state.theme)}>
+        {isMobile ? (
+          <MobileWrapper>
+            <Contact />
+            <CV />
+          </MobileWrapper>
         ) : (
           <>
+          <Background />
             <LeftSection>
               <Contact />
               <Proverb />
@@ -72,4 +79,13 @@ const RightSection = styled.aside`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+`;
+
+
+
+const MobileWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
 `;

@@ -6,7 +6,7 @@ declare global {
 
 export function hasTouchScreen() {
     let hasTouchScreen = false;
-  
+  console.log('function hasTouchScreen()')
     if (Object.hasOwn(navigator, "maxTouchPoints")) {
       hasTouchScreen = navigator.maxTouchPoints > 0;
     } else if (Object.hasOwn(navigator, "msMaxTouchPoints")) {

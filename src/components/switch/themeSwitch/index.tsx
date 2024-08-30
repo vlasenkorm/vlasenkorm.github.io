@@ -1,11 +1,11 @@
 
 import styled from "styled-components";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 
 const ToggleSlider: React.FC = () => {
 
-  const theme = useGStore((state) => state.theme)
-  const changeTheme = useGStore((state) => state.changeTheme)
+  const theme = useStore((state) => state.theme)
+  const changeTheme = useStore((state) => state.changeTheme)
 
 
   return (

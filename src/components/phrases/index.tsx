@@ -2,7 +2,7 @@ import styled from "styled-components";
 //TODO Move to API
 import data from "../../localDB/data.json"
 import { useEffect, useState } from "react";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 
 
 const Proverb: React.FC = () => {
@@ -24,7 +24,7 @@ useEffect(() => {
 
 
   return (
-    <Wrapper $theme={useGStore((state) => state.theme)}>
+    <Wrapper $theme={useStore((state) => state.theme)}>
       <Box>
         "{list[index].text}"<br />
         "{list[index].origin_text}"
@@ -35,7 +35,7 @@ useEffect(() => {
           cx="50" cy="50" 
           fill="none"
           r="44" strokeWidth="10" 
-          stroke={useGStore((state) => state.theme) ? '#2a2a2a' :'#f8f8f8'}
+          stroke={useStore((state) => state.theme) ? '#2a2a2a' :'#f8f8f8'}
           strokeDasharray="200 1400"
           strokeLinecap="round"
         />

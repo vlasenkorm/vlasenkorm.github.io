@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import ToggleSlider from "../switch/themeSwitch";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 import Logo from "../icons/logo";
 import useScreenSize from "@src/utils/resizeHook";
 
@@ -9,20 +9,17 @@ export const HeaderHeight = 100;
 
 const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const screenSize = useScreenSize();
 
-  console.log(screenSize);
-
-  const fill = useGStore((state) => state.theme) ? "#2a2a2a" : "#f8f8f8";
-  const hide = useGStore((state) => state.theme) ? "#f8f8f8" : "#2a2a2a";
+  const fill = useStore((state) => state.theme) ? "#2a2a2a" : "#f8f8f8";
+  const hide = useStore((state) => state.theme) ? "#f8f8f8" : "#2a2a2a";
 
   return (
-    <Wrapper $theme={useGStore((state) => state.theme)}>
+    <Wrapper $theme={useStore((state) => state.theme)}>
       <div>
         <Logo text="gg" fill={fill} hide={hide} />
       </div>
-      {screenSize.height}/
-      {screenSize.width}
+      X: {useStore((state) => state.width)}<br/>
+      Y: {useStore((state) => state.height)}
       <h3>
         {t("name")}
         <br />

@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 import { useReactToPrint } from "react-to-print";
 import DownloadComponent from "../icons/download";
 import PrintComponent from "../icons/print";
 
 const DownloadPDF: React.FC = () => {
-  const printContext = useGStore((state) => state.printContext);
+  const printContext = useStore((state) => state.printContext);
   const handlePrint = useReactToPrint({
     content: () => (printContext ? printContext.current : null),
     pageStyle: ".divider { break-after: always; }",

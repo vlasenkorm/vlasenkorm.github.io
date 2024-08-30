@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Copy from "../icons/copy";
 import Link from "../icons/link";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 
 const Contact: React.FC = () => {
   return (
-    <Wrapper $theme={useGStore((state) => state.theme)}>
+    <Wrapper $theme={useStore((state) => state.theme)}>
       <Title>Contact</Title>
       <Contacts>
         <div>

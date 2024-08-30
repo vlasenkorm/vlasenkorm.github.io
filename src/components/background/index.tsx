@@ -10,7 +10,7 @@ import {
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import styled from "styled-components";
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 export const Background = () => {
@@ -35,7 +35,7 @@ export const Background = () => {
     //console.log(container);
   };
 
-  const dd = useGStore((state) => state.theme);
+  const dd = useStore((state) => state.theme);
 
   const optionsWhite: ISourceOptions = useMemo(
     () => ({

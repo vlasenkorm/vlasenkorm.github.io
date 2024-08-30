@@ -1,4 +1,4 @@
-import { useGStore } from "@src/store";
+import { useStore } from "@src/store";
 import { memo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
@@ -7,7 +7,7 @@ const Page: React.FC = () => {
   const { t } = useTranslation();
   const list = ["investing", "pragma", "acropolium"];
   const componentRef = useRef(null);
-  const changePrintContext = useGStore((state) => state.changePrintContext);
+  const changePrintContext = useStore((state) => state.changePrintContext);
 
   useEffect(() => {
     changePrintContext(componentRef);
