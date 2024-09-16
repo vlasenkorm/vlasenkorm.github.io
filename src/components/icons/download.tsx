@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 const SVG = styled.svg`
-  margin-top: 3px;
   right: 40px;
   height: 20px;
   width: 20px;
   cursor: pointer;
-  margin-left: 10px;
 `;
 
-const DownloadComponent: React.FC = () => {
+const DownloadComponent: React.FC<{ color?: string }> = ({
+  color = "white",
+}) => {
   return (
     <SVG
       width="800px"
@@ -22,7 +22,7 @@ const DownloadComponent: React.FC = () => {
         <path
           id="Vector"
           d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12"
-          stroke="#ffffff"
+          stroke={color}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

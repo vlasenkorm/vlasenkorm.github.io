@@ -1,6 +1,7 @@
 
 import styled from "styled-components";
 import { useStore } from "@src/store";
+import { Colors } from "@src/design/colors";
 
 const ToggleSlider: React.FC = () => {
 
@@ -14,7 +15,10 @@ const ToggleSlider: React.FC = () => {
         type="checkbox"
         id="toggle"
         checked={theme}
-        onChange={() => changeTheme()}
+        onChange={() => {
+          changeTheme()
+          localStorage.setItem("theme", `${!theme}`)
+        }}
       />
       <Slider htmlFor="toggle" checked={theme}/>
     </Wrapper>
@@ -38,8 +42,7 @@ const Slider = styled.label<{checked: boolean}>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  ${props => props.checked ? 'background-color: #2196f3;' : 'background-color: #ccc;'}
+  background-color:${props => props.checked ? Colors.CornflowerBlue : Colors.Grey};
   border-radius: 34px;
   cursor: pointer;
   transition: 0.4s;
@@ -53,7 +56,7 @@ const Slider = styled.label<{checked: boolean}>`
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-    ${props => props.checked ? 'transform: translateX(26px);' : 'transform: translateX(0px);'}
+    transform: ${props => props.checked ? 'translateX(26px);' : 'translateX(0px);'}
   }
 `
 

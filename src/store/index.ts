@@ -7,6 +7,8 @@ interface GlobalState {
     changeTheme: () => void
     printContext: MutableRefObject<null> | null
     changePrintContext: (newContext: MutableRefObject<null> | null) => void
+    livePage: boolean
+    changeLivePage: () => void
     changeScreenSize: (newContext: ScreenSizeType) => void
 }
 
@@ -21,16 +23,29 @@ interface ScreenSizeType {
     LD: boolean;
 }
 
-type StoreGState = ScreenSizeType & GlobalState
+type StoreState = ScreenSizeType & GlobalState
 
+//localStorage.setItem("theme", "false")
+console.log('==>', localStorage.getItem("theme"))
 
-export const useStore = create<StoreGState>()((set) => ({
-    theme: false,
+function initTheme() {
+    const theme = localStorage.getItem("theme")
+
+    if (theme) {
+        return theme === 'false' ? false : true
+    } else {
+        localStorage.setItem("theme", "false")
+        return false
+    }
+}
+
+export const useStore = create<StoreState>()((set) => ({
+    theme: initTheme(),
     changeTheme: () => set((state) => ({ theme: !state.theme })),
-    //===
     printContext: null,
     changePrintContext: (newContext) => set({ printContext: newContext }),
-    //===
+    livePage: true,
+    changeLivePage: () => set((state) => ({ livePage: !state.livePage })),
     width: 0,
     height: 0,
     isMobile: false,

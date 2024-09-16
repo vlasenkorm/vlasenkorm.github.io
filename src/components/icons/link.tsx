@@ -9,11 +9,11 @@ const SVG = styled.svg`
   margin-left: 10px;
 `;
 
-const LinkComponent: React.FC<{ link: string }> = ({ link }) => {
+const LinkComponent: React.FC<{ link: string, color?: string }> = ({ link, color = 'white'}) => {
   return (
     <SVG
       onClick={() => open(link, "_blank")}
-      fill="#ffffff"
+      fill={color}
       height="800px"
       width="800px"
       version="1.1"

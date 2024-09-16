@@ -10,13 +10,15 @@ import Contact from "./components/contact";
 import { Background } from "./components/background";
 import DownloadPDF from "./components/downloadPDF";
 import useScreenSize from "./utils/resizeHook";
+import { Colors } from "./design/colors";
 
 export const BodyPadding = 20;
 
+
 const App: React.FC = () => {
   useScreenSize();
-
   const isMobile = useStore((state) => state.isMobile);
+  
 
   console.log("isMobile", isMobile);
   return (
@@ -59,7 +61,7 @@ const Body = styled.div<{ $theme: boolean }>`
   position: relative;
   justify-content: space-between;
   padding: ${BodyPadding}px;
-  background: ${(props) => (props.$theme ? "#f8f8f8" : "#2a2a2a")};
+  background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
 `;
 
 const LeftSection = styled.section`
@@ -80,8 +82,6 @@ const RightSection = styled.aside`
   justify-content: space-between;
   flex-direction: column;
 `;
-
-
 
 const MobileWrapper = styled.div`
   display: flex;

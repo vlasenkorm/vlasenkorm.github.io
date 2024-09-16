@@ -1,49 +1,50 @@
 import styled from "styled-components";
 //TODO Move to API
-import data from "../../localDB/data.json"
+import data from "../../localDB/data.json";
 import { useEffect, useState } from "react";
 import { useStore } from "@src/store";
-
+import { Colors } from "@src/design/colors";
 
 const Proverb: React.FC = () => {
   const [index, setIndex] = useState(0);
-  const list = Object.values(data)
- 
-useEffect(() => {
-    const interval = setInterval(() => {
-      
-      if (index < list.length - 1) {
-        setIndex((i) => i + 1)
-      } else {
-        setIndex(0)
-      }
+  const list = Object.values(data);
+  const theme = useStore((state) => state.theme);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (index < list.length - 1) {
+        setIndex((i) => i + 1);
+      } else {
+        setIndex(0);
+      }
     }, 12000);
     return () => clearInterval(interval);
   }, [index]);
 
-
   return (
-    <Wrapper $theme={useStore((state) => state.theme)}>
+    <Wrapper $theme={theme}>
       <Box>
-        "{list[index].text}"<br />
-        "{list[index].origin_text}"
+        "{list[index].text}"<br />"{list[index].origin_text}"
       </Box>
       <BottomBox>
-      <SVGLoader  viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle className="spin"
-          cx="50" cy="50" 
-          fill="none"
-          r="44" strokeWidth="10" 
-          stroke={useStore((state) => state.theme) ? '#2a2a2a' :'#f8f8f8'}
-          strokeDasharray="200 1400"
-          strokeLinecap="round"
-        />
-      </SVGLoader>
-      <FontBox>
-        {list[index].author}<br />
-        {list[index].origin_author}
-      </FontBox>
+        <SVGLoader viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle
+            className="spin"
+            cx="50"
+            cy="50"
+            fill="none"
+            r="44"
+            strokeWidth="10"
+            stroke={theme ? Colors.BBlack : Colors.BWhite}
+            strokeDasharray="200 1400"
+            strokeLinecap="round"
+          />
+        </SVGLoader>
+        <FontBox>
+          {list[index].author}
+          <br />
+          {list[index].origin_author}
+        </FontBox>
       </BottomBox>
     </Wrapper>
   );
@@ -51,16 +52,15 @@ useEffect(() => {
 
 export default Proverb;
 
-const Wrapper = styled.div<{$theme: boolean}>`
+const Wrapper = styled.div<{ $theme: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  border: solid 1px ${props => props.$theme ? '#2a2a2a' :'#f8f8f8'};
-  background: ${props => props.$theme ? '#f8f8f8' : '#2a2a2a' };
-  color: ${props => props.$theme ? 'black' : 'white' };
- 
-`
+  border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
+  background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
+  color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+`;
 
 const SVGLoader = styled.svg`
   height: 30px;
@@ -84,24 +84,23 @@ const SVGLoader = styled.svg`
   .spin {
     animation: progress 12s linear infinite;
   }
-`
+`;
 
 const BottomBox = styled.div`
-  display: flex;
   width: 100%;
+  display: flex;
   align-items: flex-end;
-`
-  
+`;
+
 const Box = styled.div`
   font-family: Kalam;
   font-size: 18px;
-  width: 100%;
   text-align: center;
-`
+`;
 
 const FontBox = styled.div`
-  font-family: Roboto;
   width: 100%;
+  font-family: Roboto;
   margin-top: 20px;
   text-align: right;
-`
+`;

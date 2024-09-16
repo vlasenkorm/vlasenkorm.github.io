@@ -2,20 +2,24 @@ import styled from "styled-components";
 import Copy from "../icons/copy";
 import Link from "../icons/link";
 import { useStore } from "@src/store";
+import { Colors } from "@src/design/colors";
 
 const Contact: React.FC = () => {
+
+  const theme = useStore((state) => state.theme)
+
   return (
-    <Wrapper $theme={useStore((state) => state.theme)}>
+    <Wrapper $theme={theme}>
       <Title>Contact</Title>
       <Contacts>
         <div>
-          Gmail : vlasenkorm@gmail.com <Copy text={"vlasenkorm@gmail.com"} />
+          Gmail : vlasenkorm@gmail.com <Copy text={"vlasenkorm@gmail.com"} color={theme ? Colors.Black : Colors.White}/>
         </div>
         <div>
-          Phone : +380509672999 <Copy text={"+380509672999"} />
+          Phone : +380509672999 <Copy text={"+380509672999"} color={theme ? Colors.Black : Colors.White} />
         </div>
         <div>
-          Linkedin : vlasenkorm <Link link={"https://www.linkedin.com/in/vlasenkorm/"} />
+          Linkedin : vlasenkorm <Link link={"https://www.linkedin.com/in/vlasenkorm/"} color={theme ? Colors.Black : Colors.White} />
         </div>
       </Contacts>
     </Wrapper>
@@ -28,25 +32,21 @@ const Wrapper = styled.div<{ $theme: boolean }>`
   font-family: Roboto;
   font-size: 18px;
   padding: 10px;
-  border: solid 1px ${(props) => (props.$theme ? "#2a2a2a" : "#f8f8f8")};
-  background: ${(props) => (props.$theme ? "#f8f8f8" : "#2a2a2a")};
-  color: ${(props) => (props.$theme ? "black" : "#f8f8f8")};
-  box-shadow: 0px 0px 25px
-    ${(props) =>
-      props.$theme ? "rgba(0, 0, 0, 0.4)" : "rgba(255, 255, 255, 0.4)"}
-    inset;
+  background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
+  color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+  border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
 `;
 
 const Title = styled.div`
-  border-bottom: solid;
   font-size: 26px;
   margin: 10px;
+  border-bottom: solid;
 `;
 
 const Contacts = styled.div`
-  line-height: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
-  padding: 10px;
+  padding: 10px; 
+  line-height: 30px;
 `;

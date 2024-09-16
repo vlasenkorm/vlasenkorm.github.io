@@ -8,6 +8,7 @@ const Page: React.FC = () => {
   const list = ["investing", "pragma", "acropolium"];
   const componentRef = useRef(null);
   const changePrintContext = useStore((state) => state.changePrintContext);
+  const isMobile = useStore((state) => state.isMobile);
 
   useEffect(() => {
     changePrintContext(componentRef);
@@ -25,7 +26,7 @@ const Page: React.FC = () => {
       <StyledP>{t("summary.text")}</StyledP>
 
       <h3>{t("skills.title")}</h3>
-      <StyledTable>
+      <StyledTable $mobile={isMobile}>
         <tbody>
           <tr>
             <td>{t("skills.languages.title")}s</td>
@@ -100,8 +101,9 @@ const Wrapper = styled.article`
   padding: 20px;
 `;
 
-const StyledTable = styled.table`
+const StyledTable = styled.table<{ $mobile: boolean }>`
   caption-side: top;
+  font-size: ${(props) => props.$mobile ? '2rem' : '1rem' };
   border: none;
   border-collapse: collapse;
   tr > td {

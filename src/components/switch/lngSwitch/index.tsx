@@ -1,24 +1,25 @@
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { useStore } from "@src/store";
+import { Colors } from "@src/design/colors";
 
 const LngSwitch: React.FC = () => {
   const { i18n } = useTranslation();
-  const localTheme = useStore((state) => state.theme);
+  const theme = useStore((state) => state.theme);
 
   return (
-    <Wrapper $theme={localTheme}>
+    <Wrapper $theme={theme}>
       <StyleButton
         $active={i18n.language === "en" ? 1 : 0}
-        $theme={localTheme}
+        $theme={theme}
         onClick={() => i18n.changeLanguage("en")}
       >
         EN
       </StyleButton>
-      <Divider $theme={localTheme} />
+      <Divider $theme={theme} />
       <StyleButton
         $active={i18n.language === "ua" ? 1 : 0}
-        $theme={localTheme}
+        $theme={theme}
         onClick={() => i18n.changeLanguage("ua")}
       >
         UA
@@ -31,20 +32,16 @@ export default LngSwitch;
 
 const Wrapper = styled.div<{ $theme: boolean }>`
   height: fit-content;
-
   display: flex;
   flex-direction: column;
   background-color: transparent;
-  box-shadow: 0px 0px 25px
-    ${(props) =>
-      props.$theme ? "rgba(0, 0, 0, 0.4)" : "rgba(255, 255, 255, 0.4)"};
-  border: solid 1px ${(props) => (props.$theme ? "#2a2a2a" : "#f8f8f8")};
+  border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
   border-radius: 2px;
 `;
 
 const Divider = styled.div<{ $theme: boolean }>`
   height: 1px;
-  background-color: ${(props) => (props.$theme ? "#2a2a2a" : "#f8f8f8")};
+  background-color: ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
 `;
 
 const StyleButton = styled.button<{ $active: number; $theme: boolean }>`
@@ -53,9 +50,9 @@ const StyleButton = styled.button<{ $active: number; $theme: boolean }>`
   border: none;
   background-color: transparent;
   color: ${(props) =>
-    props.$active ? "cornflowerblue" : props.$theme ? "#2a2a2a" : "#f8f8f8"};
+    props.$active ? Colors.CornflowerBlue : props.$theme ? Colors.BBlack : Colors.BWhite};
   font-size: large;
   &:hover {
-    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.4) inset;
+    box-shadow: 0px 0px 25px ${(props) => (props.$theme ? Colors.Black : Colors.White)}44 inset;
   }
 `;

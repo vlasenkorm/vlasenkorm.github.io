@@ -9,7 +9,7 @@ const SVG = styled.svg`
   margin-left: 10px;
 `;
 
-const CopyComponent: React.FC<{ text: string }> = ({ text }) => {
+const CopyComponent: React.FC<{ text: string, color?: string }> = ({ text, color = 'white' }) => {
   return (
     <SVG
       onClick={() => navigator.clipboard.writeText(text)}
@@ -32,7 +32,7 @@ const CopyComponent: React.FC<{ text: string }> = ({ text }) => {
         d="M0,0H7l5,5V15H0Z"
         transform="translate(9 6)"
         fill="none"
-        stroke="#ffffff"
+        stroke={color}
         strokeMiterlimit="10"
         strokeWidth="1.5"
       />
@@ -42,7 +42,7 @@ const CopyComponent: React.FC<{ text: string }> = ({ text }) => {
         d="M5.959,15H0V0H7l3.043,3.043"
         transform="translate(3 3)"
         fill="none"
-        stroke="#ffffff"
+        stroke={color}
         strokeMiterlimit="10"
         strokeWidth="1.5"
       />
@@ -52,7 +52,7 @@ const CopyComponent: React.FC<{ text: string }> = ({ text }) => {
         d="M6,6H0V0H0"
         transform="translate(15 6)"
         fill="none"
-        stroke="#ffffff"
+        stroke={color}
         strokeMiterlimit="10"
         strokeWidth="1.5"
       />

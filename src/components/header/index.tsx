@@ -3,22 +3,24 @@ import styled from "styled-components";
 import ToggleSlider from "../switch/themeSwitch";
 import { useStore } from "@src/store";
 import Logo from "../icons/logo";
-import useScreenSize from "@src/utils/resizeHook";
+import { Colors } from "@src/design/colors";
 
 export const HeaderHeight = 100;
 
 const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
-
-  const fill = useStore((state) => state.theme) ? "#2a2a2a" : "#f8f8f8";
-  const hide = useStore((state) => state.theme) ? "#f8f8f8" : "#2a2a2a";
+  const theme = useStore((state) => state.theme);
 
   return (
-    <Wrapper $theme={useStore((state) => state.theme)}>
+    <Wrapper $theme={theme}>
       <div>
-        <Logo text="gg" fill={fill} hide={hide} />
+        <Logo
+          fill={theme ? Colors.BBlack : Colors.BWhite}
+          hide={theme ? Colors.BWhite : Colors.BBlack}
+        />
       </div>
-      X: {useStore((state) => state.width)}<br/>
+      X: {useStore((state) => state.width)}
+      <br />
       Y: {useStore((state) => state.height)}
       <h3>
         {t("name")}
@@ -35,12 +37,12 @@ export default Header;
 const Wrapper = styled.header<{ $theme: boolean }>`
   height: ${HeaderHeight}px;
   display: flex;
-  border-bottom: solid ${(props) => (props.$theme ? "#2a2a2a" : "#f8f8f8")} 2px;
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  background: ${(props) => (props.$theme ? "#f8f8f8" : "#2a2a2a")};
-  color: ${(props) => (props.$theme ? "black" : "#f8f8f8")};
+  border-bottom: solid ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)} 2px;
+  background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
+  color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
   svg {
     height: 100px;
     width: 100px;

@@ -11,8 +11,8 @@ const SVG = styled.svg`
 `
 
 
-const LogoComponent: React.FC<{ text: string, fill: string, hide: string }> = ({ text, fill, hide }) => {
-  return <SVG onClick={() => navigator.clipboard.writeText(text)} xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="-147.07 -13.02 1080 1080">
+const LogoComponent: React.FC<{ fill: string, hide: string }> = ({ fill, hide }) => {
+  return <SVG xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="-147.07 -13.02 1080 1080">
     <rect width="100%" height="100%" fill="transparent" />
     <circle r="35" fill={fill} transform="matrix(4.23 0 0 4.23 213.65 351.37)" vectorEffect="non-scaling-stroke" />
     <path fill={hide} d="M280.885 348.3c0 41.316-30.892 74.813-69.006 74.813H-178.16c-38.114 0-69.006-33.497-69.006-74.813s30.892-74.813 69.006-74.813h390.032c38.12 0 69.012 33.497 69.012 74.813z" vectorEffect="non-scaling-stroke" />

@@ -1,14 +1,12 @@
-import { memo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import Page from "./page";
-import useScreenSize from "@src/utils/resizeHook";
 import { useStore } from "@src/store";
 
 const CV: React.FC = () => {
-console.log('CV: React.FC');
-  
-  const isMobile = useStore((state) => state.isMobile)
 
+  console.log('CV: React.FC');
+  
   const [X, setX] = useState(0);
   const [Y, setY] = useState(0);
   const componentRef = useRef<HTMLDivElement>(null);
@@ -22,6 +20,9 @@ console.log('CV: React.FC');
     setX(0);
     setY(0);
   };
+
+  const isMobile = useStore((state) => state.isMobile)
+
 
   return (
     <Container onMouseMove={move} onMouseLeave={clear} ref={componentRef}>
@@ -43,10 +44,10 @@ const Wrapper = styled.div.attrs<{ $rotate_x?: number; $rotate_y?: number; $mobi
     },
   })
 )`
-  border: solid black 2px;
+  border: solid black 1px;
   width: ${(props) => props.$mobile ? '100%' : '800px'};
   background-color: white;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3) inset;
 `;
 
 const Container = styled.div`

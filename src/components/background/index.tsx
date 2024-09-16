@@ -11,6 +11,7 @@ import {
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 import styled from "styled-components";
 import { useStore } from "@src/store";
+import { Colors } from "@src/design/colors";
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
 export const Background = () => {
@@ -41,7 +42,7 @@ export const Background = () => {
     () => ({
       background: {
         color: {
-          value: "#f8f8f8",
+          value: Colors.BWhite,
         },
       },
       fpsLimit: 120,
@@ -104,7 +105,7 @@ export const Background = () => {
     () => ({
       background: {
         color: {
-          value: "#2a2a2a",
+          value: Colors.BBlack,
         },
       },
       fpsLimit: 120,
