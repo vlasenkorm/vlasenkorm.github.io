@@ -23,6 +23,7 @@ export default DownloadPDF;
 
 const StyleButton = styled.button<{ $theme: boolean }>`
   display: flex;
+  cursor: pointer;
   justify-content: space-around;
   height: 40px;
   align-items: center;

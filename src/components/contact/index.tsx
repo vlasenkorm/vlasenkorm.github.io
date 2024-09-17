@@ -30,7 +30,6 @@ export default Contact;
 
 const Wrapper = styled.div<{ $theme: boolean }>`
   font-family: Roboto;
-  font-size: 18px;
   padding: 10px;
   background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
   color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
@@ -38,7 +37,7 @@ const Wrapper = styled.div<{ $theme: boolean }>`
 `;
 
 const Title = styled.div`
-  font-size: 26px;
+  font-size: 2rem;
   margin: 10px;
   border-bottom: solid;
 `;
@@ -48,5 +47,5 @@ const Contacts = styled.div`
   flex-wrap: wrap;
   justify-content: end;
   padding: 10px; 
-  line-height: 30px;
+  font-size: 1.2rem;
 `;

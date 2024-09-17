@@ -19,9 +19,10 @@ const Header: React.FC = () => {
           hide={theme ? Colors.BWhite : Colors.BBlack}
         />
       </div>
+      {/* debug:<br />
       X: {useStore((state) => state.width)}
       <br />
-      Y: {useStore((state) => state.height)}
+      Y: {useStore((state) => state.height)} */}
       <h3>
         {t("name")}
         <br />

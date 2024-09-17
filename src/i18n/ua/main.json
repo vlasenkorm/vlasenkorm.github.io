@@ -1,6 +1,6 @@
 {
   "name": "Роман Власенко",
-  "title": "Front-end розробник",
+  "title": "Front-end Інженер",
   "summary": {
     "title": "Резюме",
     "text": "Front-end розробник з 6-річним досвідом програмування. Глибоке знання JavaScript і пов’язаних фреймворків. Досвід роботи з віддаленою територіально розподіленою командою. Володіє хорошими навичками спілкування, цілеспрямований, ідеальний командний гравець."
@@ -42,21 +42,21 @@
     },
     "investing": {
       "role": "Full-Stack Engineer",
-      "title":"G.I.S. INVESTING",
+      "company":"G.I.S. INVESTING",
       "description": "Створення клієнтоорієнтованих веб та мобільних додатків. Розробка архітектури проекту. Усунення несправностей, пошук оптимальних рішень.",
       "technologies" : "TypeScript, React, Redux, Styled Components, Express.JS, RESTful API, Sequelize, Docker.",
       "year": "2022 - зараз"
     },
     "pragma": {
       "role": "Front-end Developer",
-      "title":"Pragma",
+      "company":"Pragma",
       "description": "Робота над криптовалютними проектами. Спілкування з клієнтом. Побудова архітектури програми, впровадження нових ідей. Працювати в команді, спілкуватися, знаходити вирішення проблем. Пропозиції щодо вдосконалення поточних рішень.",
       "technologies" : "JavaScript, React, TypeScript, Styled Components, API GraphQL, Web3",
       "year": "2021 - 2022"
     },
     "acropolium": {
       "role": "Full-Stack Engineer",
-      "title":"Acropolium",
+      "company":"Acropolium",
       "description": "Навчання компанією на позицію. Створюйте та змінюйте Front-end проекти. Створення API та налаштування бази данних. Побудова архітектури програми, впровадження нових ідей. Вдосконалення як себе, так і нових співробітників. Спілкування з клієнтом.",
       "technologies" : "JavaScript, React, Vue, Angular, Node.JS.",
       "year": "2019 – 2021"

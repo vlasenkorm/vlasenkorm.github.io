@@ -47,6 +47,7 @@ const Divider = styled.div<{ $theme: boolean }>`
 const StyleButton = styled.button<{ $active: number; $theme: boolean }>`
   height: 40px;
   width: 80px;
+  cursor: pointer;
   border: none;
   background-color: transparent;
   color: ${(props) =>
