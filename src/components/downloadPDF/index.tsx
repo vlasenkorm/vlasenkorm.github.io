@@ -24,14 +24,30 @@ export default DownloadPDF;
 const StyleButton = styled.button<{ $theme: boolean }>`
   display: flex;
   cursor: pointer;
-  justify-content: space-around;
-  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  height: 52px;
   align-items: center;
   border: 1px solid ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+  border-radius: 10px;
   color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
   background-color: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
-  font-size: large;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0 16px;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
   &:hover {
-    box-shadow: 0px 0px 25px ${(props) => (props.$theme ? Colors.Black : Colors.White)}44 inset;
+    box-shadow:
+      0px 0px 22px ${(props) => (props.$theme ? Colors.Black : Colors.White)}55 inset,
+      0px 0px 18px ${(props) => (props.$theme ? Colors.Black : Colors.White)}22;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+    outline-offset: 2px;
   }
 `;
