@@ -31,29 +31,43 @@ const LngSwitch: React.FC = () => {
 export default LngSwitch;
 
 const Wrapper = styled.div<{ $theme: boolean }>`
-  height: fit-content;
   display: flex;
   flex-direction: column;
+  gap: 8px;
   background-color: transparent;
-  border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
-  border-radius: 2px;
 `;
 
 const Divider = styled.div<{ $theme: boolean }>`
-  height: 1px;
-  background-color: ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
+  display: none;
 `;
 
 const StyleButton = styled.button<{ $active: number; $theme: boolean }>`
-  height: 40px;
-  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 160px;
+  height: 52px;
   cursor: pointer;
-  border: none;
-  background-color: transparent;
+  border: 1px solid ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+  border-radius: 10px;
+  background-color: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
   color: ${(props) =>
     props.$active ? Colors.CornflowerBlue : props.$theme ? Colors.BBlack : Colors.BWhite};
-  font-size: large;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0 16px;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+
   &:hover {
-    box-shadow: 0px 0px 25px ${(props) => (props.$theme ? Colors.Black : Colors.White)}44 inset;
+    box-shadow:
+      0px 0px 22px ${(props) => (props.$theme ? Colors.Black : Colors.White)}55 inset,
+      0px 0px 18px ${(props) => (props.$theme ? Colors.Black : Colors.White)}22;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+    outline-offset: 2px;
   }
 `;

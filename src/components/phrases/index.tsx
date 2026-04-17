@@ -24,7 +24,7 @@ const Proverb: React.FC = () => {
   return (
     <Wrapper $theme={theme}>
       <Box>
-        "{list[index].text}"<br />"{list[index].origin_text}"
+        "{list[index].text}"
       </Box>
       <BottomBox>
         <SVGLoader viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +42,6 @@ const Proverb: React.FC = () => {
         </SVGLoader>
         <FontBox>
           {list[index].author}
-          <br />
-          {list[index].origin_author}
         </FontBox>
       </BottomBox>
     </Wrapper>
@@ -58,7 +56,7 @@ const Wrapper = styled.div<{ $theme: boolean }>`
   align-items: center;
   padding: 10px;
   border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
-  background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
+  background-color: ${(props) => (props.$theme ? Colors.BlackUI: Colors.WhiteUI)};
   color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
 `;
 

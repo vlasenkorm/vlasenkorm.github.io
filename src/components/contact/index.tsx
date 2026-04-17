@@ -8,20 +8,19 @@ import { useState } from "react";
 const Contact: React.FC = () => {
 
   const theme = useStore((state) => state.theme)
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <Wrapper $theme={theme}>
-      <TitleRow>
+      <TitleRow $theme={theme} onClick={() => setIsVisible((v) => !v)}>
         <Title>Contact</Title>
-        <ToggleButton
+        <ToggleStatus
           type="button"
           $theme={theme}
-          aria-expanded={isVisible}
-          onClick={() => setIsVisible((v) => !v)}
-        >
-          {isVisible ? "Hide" : "Show"}
-        </ToggleButton>
+          $open={isVisible}
+          aria-label={isVisible ? "Hide contacts" : "Show contacts"}
+          title={isVisible ? "Hide contacts" : "Show contacts"}
+        />
       </TitleRow>
 
       {isVisible && (
@@ -29,10 +28,6 @@ const Contact: React.FC = () => {
           <div>
             Gmail : vlasenkorm@gmail.com{" "}
             <Copy text={"vlasenkorm@gmail.com"} color={theme ? Colors.Black : Colors.White} />
-          </div>
-          <div>
-            Phone : +380509672999{" "}
-            <Copy text={"+380509672999"} color={theme ? Colors.Black : Colors.White} />
           </div>
           <div>
             Linkedin : vlasenkorm{" "}
@@ -48,7 +43,6 @@ export default Contact;
 
 const Wrapper = styled.div<{ $theme: boolean }>`
   font-family: Roboto;
-  padding: 10px;
   background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
   color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
   border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
@@ -57,29 +51,60 @@ const Wrapper = styled.div<{ $theme: boolean }>`
 const Title = styled.div`
   font-size: 2rem;
   margin: 10px;
-  border-bottom: solid;
 `;
 
-const TitleRow = styled.div`
+const TitleRow = styled.div<{ $theme: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.14s ease;
+  background-color: ${(props) => (props.$theme ? Colors.BlackUI: Colors.WhiteUI)};
+
+  &:hover {
+    background-color: ${(props) => (props.$theme ? "#e1e1e1" : "#4a4a4a")};
+  }
 `;
 
-const ToggleButton = styled.button<{ $theme: boolean }>`
+const ToggleStatus = styled.button<{ $theme: boolean; $open: boolean }>`
+  position: relative;
   margin: 10px;
-  padding: 8px 12px;
-  font-size: 1rem;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   cursor: pointer;
-  color: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
-  background: ${(props) => (props.$theme ? Colors.BWhite : Colors.BBlack)};
-  border: solid 1px ${(props) => (props.$theme ? Colors.BBlack : Colors.BWhite)};
+  background: transparent;
+  border: none;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.14s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background: ${(props) => (props.$theme ? Colors.Black : Colors.White)};
+    transform-origin: center;
+    transition: transform 0.18s ease, background-color 0.14s ease;
+  }
+
+  &::before {
+    left: 10px;
+    transform: translateY(-50%) rotate(${(props) => (props.$open ? "-45deg" : "45deg")});
+  }
+
+  &::after {
+    right: 10px;
+    transform: translateY(-50%) rotate(${(props) => (props.$open ? "45deg" : "-45deg")});
+  }
 `;
 
 const Contacts = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: end;
+  justify-content: start;
   padding: 10px; 
   font-size: 1.2rem;
 `;
